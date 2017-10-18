@@ -20,7 +20,7 @@ class Pokemon{
     }
     
     init(pokemonName: String, pokemonId: Int){
-        self._pokemonName = pokemonName
+        self._pokemonName = pokemonName.capitalized
         self._pokemonId = pokemonId
     }
     
