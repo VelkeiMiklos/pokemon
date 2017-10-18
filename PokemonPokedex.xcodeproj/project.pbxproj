@@ -28,7 +28,7 @@
 		F5C36E161F965E31000FA2AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F5C36E181F965E31000FA2AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F5C36E1E1F96620E000FA2AC /* music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = music.mp3; sourceTree = "<group>"; };
-		F5C36E1F1F96620F000FA2AC /* Pokemon Solid.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pokemon Solid.ttf"; sourceTree = "<group>"; };
+		F5C36E1F1F96620F000FA2AC /* pokemon.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = pokemon.ttf; sourceTree = "<group>"; };
 		F5C36E201F96620F000FA2AC /* csv.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = csv.swift; sourceTree = "<group>"; };
 		F5C36E211F966210000FA2AC /* pokemon.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = pokemon.csv; sourceTree = "<group>"; };
 		F5C36E261F96630C000FA2AC /* PokemonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonCell.swift; sourceTree = "<group>"; };
@@ -72,7 +72,7 @@
 				F5C36E0D1F965E31000FA2AC /* Main.storyboard */,
 				F5C36E201F96620F000FA2AC /* csv.swift */,
 				F5C36E1E1F96620E000FA2AC /* music.mp3 */,
-				F5C36E1F1F96620F000FA2AC /* Pokemon Solid.ttf */,
+				F5C36E1F1F96620F000FA2AC /* pokemon.ttf */,
 				F5C36E211F966210000FA2AC /* pokemon.csv */,
 				F5C36E131F965E31000FA2AC /* Assets.xcassets */,
 				F5C36E151F965E31000FA2AC /* LaunchScreen.storyboard */,

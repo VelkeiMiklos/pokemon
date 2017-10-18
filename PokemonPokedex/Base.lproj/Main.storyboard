@@ -12,7 +12,7 @@
         <array key="HelveticaNeue.ttc">
             <string>HelveticaNeue-Bold</string>
         </array>
-        <array key="Pokemon Solid.ttf">
+        <array key="pokemon.ttf">
             <string>PokemonSolidNormal</string>
         </array>
     </customFonts>
@@ -29,7 +29,7 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="80"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pokedex" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hgq-3v-Rf9">
-                                        <rect key="frame" x="134.5" y="21" width="106.5" height="39.5"/>
+                                        <rect key="frame" x="133.5" y="24" width="110" height="33"/>
                                         <fontDescription key="fontDescription" name="PokemonSolidNormal" family="Pokemon Solid" pointSize="28"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
