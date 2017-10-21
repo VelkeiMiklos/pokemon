@@ -23,9 +23,16 @@ class MainVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Beállítások
         collectionView.delegate = self
         collectionView.dataSource = self
         searchBar.delegate = self
+        
+        //Keyboard elüntetés
+        searchBar.returnKeyType = UIReturnKeyType.done
+        
+        //Init metódusok
         parseCSV()
         initMusic()
     }
@@ -43,6 +50,7 @@ class MainVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         }
         
     }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "pokemonCell", for: indexPath) as? PokemonCell{
             
@@ -60,33 +68,62 @@ class MainVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         }else{
             return PokemonCell()
         }
-    }    
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        //Keyboard eltüntetése
+        view.endEditing(true)
+    }
+    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        //search happened
+        //keresés
         filteredPokemon = pokemons.filter{ $0.pokemonName.lowercased().contains( searchBar.text!.lowercased()) }
-        
+
         if filteredPokemon.count != 0{
+            self.collectionView.reloadData()
             searchActive = true
         }else{
             searchActive = false
+            self.collectionView.reloadData()
+            //Keyboard eltüntetése
+            view.endEditing(true)
         }
-        self.collectionView.reloadData()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let poke: Pokemon!
+        if searchActive{
+            poke = filteredPokemon[indexPath.row]
+        }else{
+            poke = pokemons[indexPath.row]
+        }
+        performSegue(withIdentifier: "toPokemonDetail", sender: poke)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toPokemonDetail"{
+            if let destinationVC = segue.destination as? PokemonDetailVC{
+                assert(sender as? Pokemon != nil)
+                destinationVC.pokemon = sender as! Pokemon
+            }
+        }
     }
     
     //Actions
     @IBAction func musicBtnPressed(_ sender: UIButton) {
+        //zene leállít
         if audioPlayer.isPlaying{
             audioPlayer.stop()
             sender.alpha = 0.5
-            
         }else{
             audioPlayer.play()
             sender.alpha = 1
         }
     }
     
-    //Init methods
+    //Methods
     func parseCSV(){
+        //csv fájl beolvasása
         let path = Bundle.main.path(forResource: "pokemon", ofType: "csv")!
         do{
             let csv = try CSV(contentsOfURL: path)
@@ -104,6 +141,7 @@ class MainVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     func initMusic(){
+        //zene indítása
         let url = Bundle.main.url(forResource: "music", withExtension: "mp3")!
         do {
             audioPlayer = try AVAudioPlayer(contentsOf: url)

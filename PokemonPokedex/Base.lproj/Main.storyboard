@@ -30,7 +30,7 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="80"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pokedex" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hgq-3v-Rf9">
-                                        <rect key="frame" x="135" y="20.5" width="106.5" height="39.5"/>
+                                        <rect key="frame" x="133" y="24.5" width="110" height="33"/>
                                         <fontDescription key="fontDescription" name="PokemonSolidNormal" family="Pokemon Solid" pointSize="28"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -56,7 +56,7 @@
                                     <constraint firstAttribute="trailing" secondItem="1L1-R6-799" secondAttribute="trailing" constant="8" id="xwb-k3-D1s"/>
                                 </constraints>
                             </view>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Y3m-TW-wcS">
+                            <searchBar contentMode="redraw" placeholder="Search for Pokemon" translatesAutoresizingMaskIntoConstraints="NO" id="Y3m-TW-wcS">
                                 <rect key="frame" x="0.0" y="100" width="375" height="56"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="QEr-CO-Vdb"/>
@@ -159,16 +159,19 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dSw-9u-hmL">
                                 <rect key="frame" x="0.0" y="20" width="375" height="80"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="90x-M2-1bG">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="90x-M2-1bG">
                                         <rect key="frame" x="8" y="17" width="73" height="47"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="47" id="t71-sk-eDd"/>
                                             <constraint firstAttribute="width" constant="73" id="udz-AS-Kdq"/>
                                         </constraints>
                                         <state key="normal" image="back"/>
+                                        <connections>
+                                            <action selector="backBtnPressed:" destination="Y2P-Kd-hUC" eventType="touchUpInside" id="qq2-NT-TcV"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bulbasaur" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rsQ-Q9-D62">
-                                        <rect key="frame" x="138.5" y="25.5" width="98.5" height="29.5"/>
+                                        <rect key="frame" x="141" y="28" width="95" height="24.5"/>
                                         <fontDescription key="fontDescription" name="PokemonSolidNormal" family="Pokemon Solid" pointSize="21"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -179,6 +182,8 @@
                                     <constraint firstItem="rsQ-Q9-D62" firstAttribute="centerX" secondItem="dSw-9u-hmL" secondAttribute="centerX" id="9aR-TZ-Mtw"/>
                                     <constraint firstItem="rsQ-Q9-D62" firstAttribute="centerY" secondItem="dSw-9u-hmL" secondAttribute="centerY" id="ATO-Ny-8mS"/>
                                     <constraint firstAttribute="height" constant="80" id="DP2-uF-zEo"/>
+                                    <constraint firstItem="90x-M2-1bG" firstAttribute="leading" secondItem="dSw-9u-hmL" secondAttribute="leading" constant="8" id="Uel-qY-fYo"/>
+                                    <constraint firstAttribute="bottom" secondItem="90x-M2-1bG" secondAttribute="bottom" constant="16" id="oUx-NQ-wWt"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7FM-2e-7PN">
@@ -243,10 +248,6 @@
                                                         </subviews>
                                                     </stackView>
                                                 </subviews>
-                                                <constraints>
-                                                    <constraint firstItem="2M1-Cd-3qf" firstAttribute="leading" secondItem="V23-qo-HOP" secondAttribute="leading" id="RM2-rz-8zC"/>
-                                                    <constraint firstItem="hXs-bp-gzk" firstAttribute="leading" secondItem="2M1-Cd-3qf" secondAttribute="trailing" id="xS6-vI-1Gf"/>
-                                                </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="3Ct-qs-SOT">
                                                 <rect key="frame" x="0.0" y="40.5" width="360" height="50"/>
@@ -355,7 +356,7 @@
                                 <rect key="frame" x="0.0" y="365.5" width="375" height="60"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Next Evolution: Venosaur LBL 32" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6R9-36-LhW">
-                                        <rect key="frame" x="63" y="20" width="249.5" height="20"/>
+                                        <rect key="frame" x="63.5" y="20" width="249.5" height="20"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -401,6 +402,20 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ggr-HM-7U7"/>
                     </view>
+                    <connections>
+                        <outlet property="pokemonBaseAttackLbl" destination="FxD-Iv-39l" id="dch-vs-js1"/>
+                        <outlet property="pokemonDefenseLbl" destination="uAH-Bp-agZ" id="XjY-nf-bJi"/>
+                        <outlet property="pokemonDescLbl" destination="clU-ea-O4d" id="deE-FQ-i21"/>
+                        <outlet property="pokemonHeightLbl" destination="mbW-0C-Dya" id="tmn-6O-SqY"/>
+                        <outlet property="pokemonIdLbl" destination="93p-93-UnA" id="Mqr-da-tbv"/>
+                        <outlet property="pokemonImg" destination="YEY-Va-ArM" id="mzJ-2i-L9x"/>
+                        <outlet property="pokemonNameLbl" destination="rsQ-Q9-D62" id="3yL-Cx-zGf"/>
+                        <outlet property="pokemonNextEvoLbl" destination="6R9-36-LhW" id="Gjd-HL-L9j"/>
+                        <outlet property="pokemonTypeLbl" destination="EPq-hQ-CSs" id="Ghl-G2-IRh"/>
+                        <outlet property="pokemonWeightLbl" destination="vKk-bC-0no" id="3SK-eq-12D"/>
+                        <outlet property="pokemon_2_Img" destination="PCx-Gl-vv4" id="sqQ-Wc-nAP"/>
+                        <outlet property="pokemon_3_Img" destination="AbD-EN-KhM" id="n1M-uU-WHE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="12R-k5-mxu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

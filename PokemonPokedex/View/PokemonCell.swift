@@ -13,6 +13,16 @@ class PokemonCell: UICollectionViewCell {
     @IBOutlet weak var pokemonNameLbl: UILabel!
     @IBOutlet weak var pokemonImg: UIImageView!
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        setupView()
+    }
+    
+    func setupView(){
+        //Kerekített legyen
+        self.layer.cornerRadius = 10
+        self.clipsToBounds = true
+    }
     
     func configureCell(pokemon: Pokemon){
         pokemonNameLbl.text = pokemon.pokemonName
