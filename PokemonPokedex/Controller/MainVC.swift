@@ -97,6 +97,7 @@ class MainVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         }else{
             poke = pokemons[indexPath.row]
         }
+
         performSegue(withIdentifier: "toPokemonDetail", sender: poke)
     }
     
